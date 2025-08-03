@@ -1,0 +1,10 @@
+This is a simple, single-page banking interface built using HTML and inline CSS. It displays a
+starting balance of $0 at the center of the screen, along with two clearly labeled buttons:
+Deposit (green) and Withdraw (red). The entire layout is centered using Flexbox, making it
+responsive and visually balanced on all screen sizes. The design uses basic HTML tags like
+<div>, <h1>, and <button>, and applies all styling directly within the style attribute
+
+The use of inline CSS keeps things simple for small projects, though it's not ideal for larger
+ones. Visual elements like padding, border-radius, and color coding help make the UI clean
+and user-friendly. Overall, this layout demonstrates how a basic yet professional-looking
+interface can be created using minimal code and no external files.
