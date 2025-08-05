@@ -69,7 +69,6 @@
      → Full-width, easy to use input
 
 ->Learning Outcome:
-Learnt how to dynamically update HTML content using `document.getElementById().textContent`.
 Learnt how to restrict user input to only positive numbers using HTML5 input types and attributes.
 Understood how to handle button clicks using JavaScript and validate logic conditions for different scenarios.
 Learnt to dynamically show user feedback using JavaScript text injection via `innerText`.
