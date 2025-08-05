@@ -2,23 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Bank Page</title>
+  <title>Bank Interface</title>
 </head>
 <body style="background-color: #f0f0f0; margin: 0; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh;">
 
-  <div style="background-color: #908b8f; padding: 30px; border-radius: 12px; text-align: center; width: 300px;">
+  <div style="background-color: #908b8f; padding: 30px; border-radius: 12px; text-align: center; width: 300px;" class="bank-interface">
     
-    <h1 style="color: #00ff00; font-size: 28px; margin-bottom: 20px;">$0</h1>
+    <h2 style="color: white; font-size: 24px;">Account Balance: <span id="balance" style="color: #00ff00;">$1000</span></h2>
 
-    <button style="background-color: #00ff00; color: white; padding: 12px; width: 100%; border: none; border-radius: 6px; margin-bottom: 10px; font-size: 16px; cursor: pointer;">
-      Deposit
-    </button>
+    <input type="number" id="amount" placeholder="Enter amount" min="0" 
+      style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 6px; border: none; font-size: 16px;">
 
-    <button style="background-color: #ff0000; color: white; padding: 12px; width: 100%; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
-      Withdraw
-    </button>
+    <div style="margin-top: 20px;" class="btn-group">
+      <button onclick="deposit()" 
+        style="background-color: #00ff00; color: white; padding: 12px; width: 100%; border: none; border-radius: 6px; margin-bottom: 10px; font-size: 16px; cursor: pointer;">
+        Deposit
+      </button>
+      <button onclick="withdraw()" 
+        style="background-color: #ff0000; color: white; padding: 12px; width: 100%; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+        Withdraw
+      </button>
+    </div>
+
+    <p id="message" style="color: white; margin-top: 15px;"></p>
 
   </div>
+
+  <script>
+    let balance = 1000;
+
+    function deposit() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const message = document.getElementById("message");
+
+      if (!isNaN(amount) && amount > 0) {
+        balance += amount;
+        document.getElementById("balance").textContent = `$${balance}`;
+        message.textContent = `Deposited $${amount}`;
+      } else {
+        message.textContent = "Enter a valid amount to deposit.";
+      }
+    }
+
+    function withdraw() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const message = document.getElementById("message");
+
+      if (!isNaN(amount) && amount > 0) {
+        if (amount <= balance) {
+          balance -= amount;
+          document.getElementById("balance").textContent = `$${balance}`;
+          message.textContent = `Withdrew $${amount}`;
+        } else {
+          message.textContent = "Insufficient balance.";
+        }
+      } else {
+        message.textContent = "Enter a valid amount to withdraw.";
+      }
+    }
+  </script>
 
 </body>
 </html>

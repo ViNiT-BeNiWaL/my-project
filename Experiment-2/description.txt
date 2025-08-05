@@ -1,10 +1,76 @@
-This is a simple, single-page banking interface built using HTML and inline CSS. It displays a
-starting balance of $0 at the center of the screen, along with two clearly labeled buttons:
-Deposit (green) and Withdraw (red). The entire layout is centered using Flexbox, making it
-responsive and visually balanced on all screen sizes. The design uses basic HTML tags like
-<div>, <h1>, and <button>, and applies all styling directly within the style attribute
+"BANK INTERFACE FUNCTIONALITY & LEARNINGS"
 
-The use of inline CSS keeps things simple for small projects, though it's not ideal for larger
-ones. Visual elements like padding, border-radius, and color coding help make the UI clean
-and user-friendly. Overall, this layout demonstrates how a basic yet professional-looking
-interface can be created using minimal code and no external files.
+1. SECTION: Account Balance Display
+-Purpose:
+    Displays the current account balance at the top of the banking interface.
+-Element:
+    `<h2>Account Balance: <span id="balance">$1000</span></h2>`
+-Behavior:
+    Balance is initialized with `$1000`.
+    Updates dynamically on deposit or withdrawal using JavaScript.
+
+2. FIELD: Amount Input
+-Requirement:
+    Required field to input a numeric value for deposit or withdrawal.
+-Element:
+    `<input type="number" id="amount" placeholder="Enter amount" min="0">`
+-Valid inputs:
+    `100`, `250.50`, `0.01` — Valid numeric amounts.
+-Invalid Inputs:
+    Negative numbers (due to `min="0"`)
+    Non-numeric input (automatically restricted by browser)
+    Empty field — should show validation message or fail silently.
+
+3. BUTTONS: Deposit & Withdraw
+-Elements:
+    `<button onclick="deposit()">Deposit</button>`
+    `<button onclick="withdraw()">Withdraw</button>`
+-Deposit Function:
+    Parses amount, adds to balance if valid.
+    Displays success message or error if invalid.
+-Withdraw Function:
+    Checks if amount is less than or equal to balance.
+    Deducts amount if valid; otherwise shows "Insufficient balance".
+-Test Cases for Deposit:
+    `Input: 100 → Expected: Balance becomes $1100`
+    `Input: -50 → Expected: Error message shown`
+
+-Test Cases for Withdraw:
+    `Input: 500 → Expected: Balance becomes $500`
+    `Input: 1500 → Expected: Error message: "Insufficient balance"`
+
+4. MESSAGE DISPLAY
+-Element:
+    `<p id="message"></p>`
+-Purpose:
+    Displays feedback to user after an action (e.g., "Deposited \$100", "Insufficient balance", etc.)
+
+
+5. CSS STYLING BREAKDOWN
+
+1. Element: body (Page Layout)
+    `display: flex`, `justify-content: center`, `align-items: center`
+     → Centers the content on screen
+    `height: 100vh`
+     → Makes the layout vertically centered
+
+2. Container Box (Bank Interface)
+    `background-color: #908b8f;`, `border-radius: 12px`, `width: 300px`, `padding: 30px`
+     → Creates a neat card-like box
+
+3. Buttons
+    Deposit: Green background `#00ff00`
+    Withdraw: Red background `#ff0000`
+    `padding`, `border-radius`, `cursor: pointer`
+     → Creates visually appealing and clickable buttons
+
+4. Input Field
+    `width: 100%`, `padding: 10px`, `border-radius: 6px`
+     → Full-width, easy to use input
+
+->Learning Outcome:
+Learnt how to dynamically update HTML content using `document.getElementById().textContent`.
+Learnt how to restrict user input to only positive numbers using HTML5 input types and attributes.
+Understood how to handle button clicks using JavaScript and validate logic conditions for different scenarios.
+Learnt to dynamically show user feedback using JavaScript text injection via `innerText`.
+Understood how inline CSS can style form elements, position layout using flexbox,
