@@ -1,0 +1,111 @@
+ADMIN DASHBOARD – TEST CASES, FUNCTIONALITY & CSS STYLING
+
+1. ELEMENT: Header – `.topbar`
+    ->Requirement: Must always appear at the top with dashboard title and theme toggle.
+    ->Purpose: Displays the page title and allows switching between light and dark themes.
+    ->Functionality:
+        ->Contains `<h1>` for "Admin Dashboard".
+        ->Contains a `<label class="toggle">` with:
+        ->checkbox (`#themeToggle`) for theme switching.
+        ->A text label "Dark Mode".
+    ->Valid State:
+        ->Checkbox unchecked → Light mode active.
+        ->Checkbox checked → Dark mode active.
+    ->Invalid State:
+        ->Header missing or broken layout → Page loses branding and toggle access.
+
+2. ELEMENT: Sidebar – `.side`
+    ->Requirement: Fixed width column for navigation.
+    ->Purpose: Allows navigation between dashboard sections.
+    ->Functionality:
+        ->Contains `<nav>` with `<ul>` list: Home, Users, Settings.
+        ->Links are purple (`#5a2ca0`) and underlined.
+    ->Valid State:
+        ->Sidebar is visible, links are clickable.
+    ->Invalid State:
+        ->Sidebar missing → Navigation options unavailable.
+
+3. ELEMENT: Main Content – `.content`
+    ->Requirement: Shows welcome message and placeholder area for charts, tables, reports.
+    ->Functionality:
+        ->`<h2>` displays "Welcome, Admin!".
+        ->`<p>` contains placeholder text.
+    ->Valid State:
+        ->Content area expands to fill available space.
+    ->Invalid State:
+        ->Text missing → Empty appearance without user guidance.
+
+4. ELEMENT: Footer – `.bottombar`
+    ->Requirement: Displays at bottom of page with copyright.
+    ->Functionality:
+        ->Centered text: "© 2025 Admin Panel".
+    ->Valid State:
+        ->Footer visible and positioned at bottom.
+    ->Invalid State:
+        ->Footer overlaps content or disappears.
+
+CSS Styling Breakdown: A Structured Overview
+
+1. THEME VARIABLES (`:root`)
+    ->Purpose: Define light mode colors.
+    ->Properties & Effects:
+        `--topbar-bg`: Green (`#3ead4f`).
+        `--topbar-text`: White.
+        `--page-bg`: White background.
+        `--side-bg`: Light gray sidebar.
+        `--text`: Black text.
+
+2. DARK MODE VARIABLES (`:root:has(#themeToggle:checked)`)
+    ->Purpose: Change colors when dark mode is active.
+    ->Properties & Effects:
+        ->Top bar background changes to dark gray (`#2e2e2e`).
+        ->Text changes to light gray (`#e6e6e6`).
+        ->Page background becomes almost black (`#0f0f0f`).
+        ->Sidebar becomes darker (`#1f1f1f`).
+
+3. BODY
+    ->Purpose: Sets global page style.
+    ->Properties & Effects:
+        ->No margin.
+        ->Full height layout (`min-height: 100vh`).
+        ->Background color from theme variable.
+        ->Arial font for readability.
+
+4. HEADER & FOOTER
+    ->Purpose: Provide consistent branding at top and bottom.
+    ->Properties & Effects:
+        ->Background and text colors use theme variables.
+        ->Padding for spacing.
+        ->Flex layout in header to space title and toggle.
+
+5. TOGGLE (`.toggle`)
+    ->Purpose: Style the dark mode checkbox.
+    ->Properties & Effects:
+        ->Inline-flex layout with gap between checkbox and label.
+        ->Pointer cursor for interactivity.
+        ->Light blue accent color for checkbox.
+
+6. MAIN LAYOUT (`.main`)
+    ->Purpose: Organize sidebar and main content.
+    ->Properties & Effects:
+        ->CSS Grid with `160px` sidebar + flexible content column.
+
+7. SIDEBAR (`.side`)
+    ->Purpose: Style the navigation menu.
+    ->Properties & Effects:
+        ->Background from theme variable.
+        ->Padding for spacing.
+        ->Underlined purple links for navigation clarity.
+
+8. CONTENT (`.content`)
+    ->Purpose: Style the main display area.
+    ->Properties & Effects:
+        ->Padding for readability.
+        ->Heading margin-top for spacing.
+
+LEARNING OUTCOMES:
+1. Learnt how to structure a dashboard layout using HTML and CSS Grid/Flexbox.
+2. Learnt how to use CSS variables for easy theme switching.
+3. Learnt how to implement dark mode using `:has()` without JavaScript.
+4. Learnt how to separate layout sections for maintainability.
+
