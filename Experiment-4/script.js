@@ -7,8 +7,4 @@ document.getElementById("text1").addEventListener("input", function() {
   updateCount("text1", "count1");
 });
 
-document.getElementById("text2").addEventListener("input", function() {
-  updateCount("text2", "count2");
-});
-
 updateCount("text2", "count2");
