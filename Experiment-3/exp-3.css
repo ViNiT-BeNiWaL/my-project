@@ -1,0 +1,101 @@
+:root {
+    --topbar-bg: #3ead4f;
+    --topbar-text: #ffffff;
+    --page-bg: #ffffff;
+    --side-bg: #f0f0f0;
+    --text: #000000;
+}
+
+:root:has(#themeToggle:checked) {
+    --topbar-bg: #2e2e2e;
+    --topbar-text: #e6e6e6;
+    --page-bg: #0f0f0f;
+    --side-bg: #1f1f1f;
+    --text: #e6e6e6;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar, .bottombar {
+    background: var(--topbar-bg);
+    color: var(--topbar-text);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+}
+
+.topbar h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--topbar-text);
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+}
+
+.toggle input { accent-color: #4ea3ff; }
+
+.main {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    flex: 1;
+}
+
+.side {
+    background: var(--side-bg);
+    padding: 14px 12px;
+}
+
+.side ul { 
+    margin: 0; 
+    padding-left: 18px; 
+}
+
+.side a { 
+    color: #5a2ca0; 
+    text-decoration: underline; 
+}
+
+.content {
+    padding: 20px 18px;
+}
+
+.content h2 {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.content p {
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.bottombar {
+    text-align: center;
+    padding: 8px 12px;
+    margin-top: auto;
+}
