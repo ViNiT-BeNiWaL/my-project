@@ -6,5 +6,3 @@ function updateCount(textareaId, countId) {
 document.getElementById("text1").addEventListener("input", function() {
   updateCount("text1", "count1");
 });
-
-updateCount("text2", "count2");
