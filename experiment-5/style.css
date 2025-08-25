@@ -1,0 +1,34 @@
+body {
+      font-family: sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      width: 400px;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h3 {
+      margin-top: 0;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .product {
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      margin-top: 8px;
+      background-color: #fafafa;
+    }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Product Filter with dropdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h3>Dynamic Product Filter</h3>
+        <select id="filter" onchange="filterProducts()">
+        <option value="all">All Products</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="books">Books</option>
+        </select>
+        <div id="product-list"></div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
