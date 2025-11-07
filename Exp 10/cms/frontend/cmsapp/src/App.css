@@ -1,0 +1,52 @@
+/* Reset some defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  background-color: #f9fafb;
+  overflow-x: hidden;
+}
+
+/* -------- Main content area -------- */
+.main-content {
+  padding: 2rem;
+  margin-left: 240px; /* sidebar width */
+  transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* When sidebar is closed, main content fills full width */
+.main-content.sidebar-closed {
+  margin-left: 0;
+}
+
+/* For smaller screens, always margin 0 */
+@media (max-width: 768px) {
+  .main-content,
+  .main-content.sidebar-closed {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
+
+/* -------- Overlay -------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  z-index: 900;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

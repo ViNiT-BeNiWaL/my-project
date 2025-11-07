@@ -1,0 +1,116 @@
+/* src/components/EditPostModal.css */
+.edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.edit-modal-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+}
+
+.edit-modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-modal-content input,
+.edit-modal-content textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.edit-modal-content input:focus,
+.edit-modal-content textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.edit-modal-content button[type='submit'] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #6366f1;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-modal-content button[type='submit']:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.edit-modal-content button[type='submit']:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #1a202c;
+}
+
+/* Dark Mode */
+body.dark-mode .edit-modal-content {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .edit-modal-content h2 {
+  color: #e2e8f0;
+}
+
+body.dark-mode .edit-modal-content input,
+body.dark-mode .edit-modal-content textarea {
+  background-color: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-mode .close-btn {
+  color: #94a3b8;
+}
+
+body.dark-mode .close-btn:hover {
+  color: #e2e8f0;
+}

@@ -1,0 +1,79 @@
+/* Post List Container */
+.post-list-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: transparent;
+}
+
+.post-list-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 2rem;
+}
+
+.no-posts-message {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Loading Message */
+.loading-message {
+  text-align: center;
+  color: #718096;
+  font-size: 1.1rem;
+  margin-top: 3rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .post-list-container {
+    padding: 1.5rem;
+  }
+
+  .post-list-heading {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-list-container {
+    padding: 1rem;
+  }
+
+  .post-list-heading {
+    font-size: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 1.25rem;
+  }
+
+  .post-title {
+    font-size: 1.125rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .post-summary,
+  .modal-text {
+    font-size: 0.95rem;
+  }
+
+  .read-more-button {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+  }
+}

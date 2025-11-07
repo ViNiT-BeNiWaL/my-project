@@ -1,0 +1,100 @@
+.create-post-container {
+  max-width: 800px;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.create-post-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.input-field:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  outline: none;
+  transform: scale(1.01);
+}
+
+.quill-editor {
+  height: 300px;
+  margin-bottom: 1.5rem;
+}
+
+.submit-button {
+  background-color: #6366f1;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode */
+body.dark-mode .create-post-container {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+body.dark-mode .create-post-heading {
+  color: #e2e8f0;
+}
+
+body.dark-mode .input-field {
+  background-color: #334155;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-mode .quill-editor .ql-toolbar {
+  background-color: #334155;
+  border-color: #475569;
+}
+
+body.dark-mode .quill-editor .ql-container {
+  background-color: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-mode .quill-editor .ql-snow .ql-stroke {
+  stroke: #94a3b8;
+}
+
+body.dark-mode .quill-editor .ql-snow .ql-fill {
+  fill: #94a3b8;
+}
+
+body.dark-mode .quill-editor .ql-snow .ql-picker-label {
+  color: #94a3b8;
+}
